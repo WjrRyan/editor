@@ -1,6 +1,39 @@
 # Pascal Editor
 
-A 3D building editor built with React Three Fiber and WebGPU.
+A monorepo for interactive spatial tooling and a demo user-profile platform for downstream agents.
+
+## Profile Platform Demo
+
+This repo now includes `apps/profile-platform`, a "Travel Intelligence Control Room" demo that shows how OTA-style behavioral data can be transformed into explainable user profiles and then consumed by recommendation and service agents.
+
+### Key Pages
+
+#### Journey
+
+The main narrative page. It replays the full pipeline from raw events to profile synthesis, QA, context publishing, and downstream agent outputs.
+
+![Journey page](docs/screenshots/profile-platform/journey.png)
+
+#### Profiles
+
+The profile inspection view. It shows identity summary, core traits, confidence, freshness, and the evidence chain behind each profile.
+
+![Profiles page](docs/screenshots/profile-platform/profiles.png)
+
+#### Agent Lab
+
+The downstream consumption view. It demonstrates how a recommendation agent or service agent can read a compact context pack and generate tailored responses.
+
+![Agent Lab page](docs/screenshots/profile-platform/agent-lab.png)
+
+### Run The Demo
+
+```bash
+bun install
+bun run --cwd apps/profile-platform dev
+```
+
+Open `http://127.0.0.1:3003/journey`.
 
 
 
@@ -10,14 +43,16 @@ https://github.com/user-attachments/assets/8b50e7cf-cebe-4579-9cf3-8786b35f7b6b
 
 ## Repository Architecture
 
-This is a Turborepo monorepo with three main packages:
+This is a Turborepo monorepo with multiple apps and shared packages:
 
 ```
 editor-v2/
 ├── apps/
-│   └── editor/          # Next.js application
+│   ├── editor/           # Next.js application for the 3D editor
+│   └── profile-platform/ # Next.js demo app for user profiles + agent workflows
 ├── packages/
 │   ├── core/            # Schema definitions, state management, systems
+│   ├── profile-core/    # Demo schemas, seeded personas, pipeline runner contracts
 │   └── viewer/          # 3D rendering components
 ```
 
@@ -26,8 +61,10 @@ editor-v2/
 | Package | Responsibility |
 |---------|---------------|
 | **@pascal-app/core** | Node schemas, scene state (Zustand), systems (geometry generation), spatial queries, event bus |
+| **@pascal-app/profile-core** | Demo schemas, seeded personas, pipeline stages, agent context contracts |
 | **@pascal-app/viewer** | 3D rendering via React Three Fiber, default camera/controls, post-processing |
 | **apps/editor** | UI components, tools, custom behaviors, editor-specific systems |
+| **apps/profile-platform** | Demo UI for profile journey replay, profile inspection, segments, evaluation, and agent consumption |
 
 The **viewer** renders the scene with sensible defaults. The **editor** extends it with interactive tools, selection management, and editing capabilities.
 
