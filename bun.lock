@@ -47,9 +47,34 @@
         "typescript": "5.9.3",
       },
     },
+    "apps/profile-platform": {
+      "name": "profile-platform",
+      "version": "0.1.0",
+      "dependencies": {
+        "@pascal-app/profile-core": "*",
+        "@tailwindcss/postcss": "^4.2.1",
+        "clsx": "^2.1.1",
+        "lucide-react": "^0.562.0",
+        "next": "16.1.6",
+        "postcss": "^8.5.6",
+        "react": "^19.2.4",
+        "react-dom": "^19.2.4",
+        "tailwind-merge": "^3.5.0",
+        "tailwindcss": "^4.2.1",
+        "zod": "^4.3.6",
+        "zustand": "^5.0.11",
+      },
+      "devDependencies": {
+        "@pascal/typescript-config": "*",
+        "@types/node": "^22.19.12",
+        "@types/react": "19.2.2",
+        "@types/react-dom": "19.2.2",
+        "typescript": "5.9.3",
+      },
+    },
     "packages/core": {
       "name": "@pascal-app/core",
-      "version": "0.1.13",
+      "version": "0.2.0",
       "dependencies": {
         "dedent": "^1.7.1",
         "idb-keyval": "^6.2.2",
@@ -143,6 +168,17 @@
         "typescript-eslint": "^8.50.0",
       },
     },
+    "packages/profile-core": {
+      "name": "@pascal-app/profile-core",
+      "version": "0.1.0",
+      "dependencies": {
+        "zod": "^4.3.6",
+      },
+      "devDependencies": {
+        "@pascal/typescript-config": "*",
+        "typescript": "5.9.3",
+      },
+    },
     "packages/typescript-config": {
       "name": "@repo/typescript-config",
       "version": "0.0.0",
@@ -166,7 +202,7 @@
     },
     "packages/viewer": {
       "name": "@pascal-app/viewer",
-      "version": "0.1.13",
+      "version": "0.2.0",
       "dependencies": {
         "polygon-clipping": "^0.15.7",
         "zustand": "^5",
@@ -438,6 +474,8 @@
     "@pascal-app/core": ["@pascal-app/core@workspace:packages/core"],
 
     "@pascal-app/editor": ["@pascal-app/editor@workspace:packages/editor"],
+
+    "@pascal-app/profile-core": ["@pascal-app/profile-core@workspace:packages/profile-core"],
 
     "@pascal-app/viewer": ["@pascal-app/viewer@workspace:packages/viewer"],
 
@@ -1159,6 +1197,8 @@
 
     "prelude-ls": ["prelude-ls@1.2.1", "", {}, "sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g=="],
 
+    "profile-platform": ["profile-platform@workspace:apps/profile-platform"],
+
     "promise-worker-transferable": ["promise-worker-transferable@1.0.4", "", { "dependencies": { "is-promise": "^2.1.0", "lie": "^3.0.2" } }, "sha512-bN+0ehEnrXfxV2ZQvU2PetO0n4gqBD4ulq3MI1WOPLgr7/Mg9yRQkX5+0v1vagr74ZTsl7XtzlaYDo2EuCeYJw=="],
 
     "prompts": ["prompts@2.4.2", "", { "dependencies": { "kleur": "^3.0.3", "sisteransi": "^1.0.5" } }, "sha512-NxNv/kLguCA7p3jE8oL2aEBsrJWgAakBpgmgK6lpPWV+WuOmY6r2/zbAVnP+T8bQlA0nzHXSJSJW0Hq7ylaD2Q=="],
@@ -1470,6 +1510,8 @@
     "next/postcss": ["postcss@8.4.31", "", { "dependencies": { "nanoid": "^3.3.6", "picocolors": "^1.0.0", "source-map-js": "^1.0.2" } }, "sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ=="],
 
     "postcss/nanoid": ["nanoid@3.3.11", "", { "bin": { "nanoid": "bin/nanoid.cjs" } }, "sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w=="],
+
+    "profile-platform/@types/react": ["@types/react@19.2.2", "", { "dependencies": { "csstype": "^3.0.2" } }, "sha512-6mDvHUFSjyT2B2yeNx2nUgMxh9LtOWvkhIU3uePn2I2oyNymUAX1NIsdgviM4CH+JSrp2D2hsMvJOkxY+0wNRA=="],
 
     "react-scan/@types/node": ["@types/node@20.19.37", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-8kzdPJ3FsNsVIurqBs7oodNnCEVbni9yUEkaHbgptDACOPW04jimGagZ51E6+lXUwJjgnBw+hyko/lkFWCldqw=="],
 

@@ -1,0 +1,31 @@
+{
+  "name": "@pascal-app/profile-core",
+  "version": "0.1.0",
+  "description": "Shared demo schemas and seeded data for the profile platform",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --build",
+    "dev": "tsc --build --watch",
+    "check-types": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@pascal/typescript-config": "*",
+    "typescript": "5.9.3"
+  }
+}
